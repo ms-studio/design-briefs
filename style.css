@@ -1,0 +1,208 @@
+/*
+Theme Name: Design Briefs
+Theme URI: https://github.com/ms-studio/design-briefs
+GitHub Theme URI: https://github.com/ms-studio/design-briefs
+Author: Manuel Schmalstieg
+Author URI: 
+Template: davis
+Description: Theme pour le site Design Briefs, basé sur Davis.
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: designbriefs
+
+*/
+
+/* @group Typography */
+
+@font-face {
+    font-family: 'glacial-indifference-webfont';
+    src: url('fonts/glacial-indifference/regular.woff2') format('woff2'),
+         url('fonts/glacial-indifference/regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'glacial-indifference-webfont';
+    src: url('fonts/glacial-indifference/bold.woff2') format('woff2'),
+         url('fonts/glacial-indifference/bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'glacial-indifference-webfont';
+    src: url('fonts/glacial-indifference/italic.woff2') format('woff2'),
+         url('fonts/glacial-indifference/italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+body * {
+    font-family: 'glacial-indifference-webfont', Futura, sans-serif;  
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+
+
+/* @end */
+
+/* @group Colors */
+
+html, body {
+	background: #09BE84;
+}
+
+.container {
+	background: #fff;
+}
+
+.site-header,
+.site-header a,
+.site-footer,
+.site-footer a {
+	color: #fff;
+}
+
+.content a:hover {
+	border-color: #09BE84;
+	color: #09BE84;
+}
+
+.meta a, .meta a:hover {
+  color: #09BE84;
+}
+
+
+/* @end */
+
+/* @group Layout */
+
+/* original header styling */
+
+header {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.site-header,
+.site-footer {
+	
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+}
+
+.site-header {
+	margin-bottom: 0;
+}
+
+.page-header h1 {
+	margin-bottom: 1em;
+}
+
+.site-footer {
+	margin-bottom: 0;
+	padding-bottom: 2em;
+}
+
+.site-name {
+	font-size: 1.5em;
+	font-weight: 700;
+	margin-top: 0;
+	text-transform: lowercase;
+}
+
+.wrapper {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+
+/* @end */
+
+/* @group Content */
+
+/* Align stuff left */
+
+.meta-content {
+	border-left: 2em solid #09BE84;
+	padding-left: 1.2em;
+}
+
+.title,
+.post .meta p {
+	text-align: left;
+}
+
+.meta {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	color: inherit;
+}
+
+.meta p,
+.meta p:first-child + p {
+	margin: 0;
+}
+
+.post .date {
+	text-transform: lowercase;
+}
+
+.post .description {
+	font-size: 1.5em;
+	font-weight: 400;
+	margin-bottom: 0.5em;
+	text-transform: lowercase;
+}
+
+@media (min-width: 621px) {
+
+	.site-name,
+	.menu,
+	footer p 
+	{
+		text-align: left;
+	}
+	
+	.page-header h1,
+	.post h1 {
+		font-size: 2em;
+	}
+	
+	.archive .post h1 {
+		font-size: 1.5em;
+	}
+}
+
+
+/* @end */
+
+
+.home .post {
+	margin-bottom: 3em;
+}
+
+/* @group Overrides */
+
+.post:before,
+.comments:before,
+.comment-respond:before,
+.comments .comment-respond:after,
+.pagination:before,
+footer:before {
+  background: none;
+  background-size: 0;
+	content: "";
+	display: none;
+	height: 0;
+	margin: 0;
+}
+
+/* @end */
