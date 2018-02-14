@@ -8,17 +8,17 @@ WordPress theme for a website that gathers briefs and exercises for design stude
 
 This is a child theme for Davis, by Anders Norén.
 
-## Setup instructions
+## Setup instructions
 
 - Install **Disable Comments** to disable comments functionality.
 - **Settings > Permalinks**: rename URL base of tags into "keywords".
 - **Settings > General** : change date format from the default (F j, Y) to this: "M Y".
 
-### How are Categories used ?
+### How are Categories used ?
 
 Not sure yet! At the moment, they are not displayed. We could use them to create a few broad categories, such as "briefs" (default category), "ideas" (for briefs that haven't been carried out yet), "historical" (for briefs derived from the history of design).
 
-### How are Tags used ?
+### How are Tags used ?
 
 Tags are used to define keywords. They can associate a brief to a more specific field of practice (type design, calligraphy, 3d printing...), a topic (time, emotions, climate...), a tool (css, javascript, arduino...), a medium (screen, video, paper).
 
