@@ -6,7 +6,7 @@ Author: Manuel Schmalstieg
 Author URI: 
 Template: davis
 Description: Theme pour le site Design Briefs, basé sur Davis.
-Version: 0.1
+Version: 0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: designbriefs
@@ -128,11 +128,27 @@ header {
 
 /* @group Content */
 
-/* Align stuff left */
+/* 
+ * Note: 
+ * The .meta-content block includes both .metadata and .content blocks 
+ *
+*/
 
-.meta-content {
-	border-left: 2em solid #09BE84;
+.meta-content,
+.child-post {
+	border-left: 1em solid #09BE84;
 	padding-left: 1.2em;
+}
+
+.child-post {
+	margin-bottom: 2em;
+}
+
+@media (min-width: 621px) {
+	.meta-content,
+	.child-post { 
+		border-left-width: 2em;
+	}
 }
 
 .title,
@@ -155,11 +171,12 @@ header {
 	text-transform: lowercase;
 }
 
-.post .description {
+.post .description,
+.child-post h2 {
 	font-size: 1.5em;
 	font-weight: 400;
 	margin-bottom: 0.5em;
-	text-transform: lowercase;
+/*	text-transform: lowercase;*/
 }
 
 @media (min-width: 621px) {
@@ -182,11 +199,56 @@ header {
 }
 
 
-/* @end */
+/* @group Gallery */
+
+.gallery .gallery-item {
+	margin: 5px 5px 0 0 !important;
+	width: 30% !important;
+}
+
+.gallery-icon {
+	background-color: #09BE84;
+}
+
+.gallery img {
+	border: 0px !important;
+	opacity: 0.7;
+	filter: 
+		sepia(100%) 
+		hue-rotate(100deg) 
+		brightness(0.9) 
+		saturate(1.5)
+		;
+	transition: filter 0.2s ease-in;
+}
+
+.gallery img:hover {
+	opacity: 1;
+	filter: 
+		sepia(20%) 
+		hue-rotate(0deg) 
+		brightness(0.9) 
+		saturate(1)
+		;
+}
+
+/* @end Gallery */
+
+/* @end Content */
 
 
-.home .post {
+.home .post,
+.archive .post {
 	margin-bottom: 3em;
+}
+
+.child-posts-header {
+	background: #09BE84;
+	color: #fff;
+}
+
+.child-posts-header h1 {
+	padding: 1em 0em;
 }
 
 /* @group Overrides */
@@ -203,6 +265,10 @@ footer:before {
 	display: none;
 	height: 0;
 	margin: 0;
+}
+
+.comment-respond {
+	margin-top: 2em;
 }
 
 /* @end */

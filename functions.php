@@ -49,3 +49,54 @@ add_filter( 'get_the_archive_title', function ( $title ) {
     return $title;
 });
 
+
+/**
+ * Functionality - 
+ * Will be moved into a plugin at some point.
+ *
+*/
+
+/*
+
+ * Make Posts hierarchical
+ Source: https://stackoverflow.com/questions/10750931/wordpress-how-to-add-hierarchy-to-posts
+*/
+
+add_action('registered_post_type', 'designbriefs_make_posts_hierarchical', 10, 2 );
+
+// Runs after each post type is registered
+function designbriefs_make_posts_hierarchical($post_type, $pto){
+
+    // Return, if not post type posts
+    if ($post_type != 'post') return;
+
+    // access $wp_post_types global variable
+    global $wp_post_types;
+
+    // Set post type "post" to be hierarchical
+    $wp_post_types['post']->hierarchical = 1;
+
+    // Add page attributes to post backend
+    // This adds the box to set up parent and menu order on edit posts.
+    add_post_type_support( 'post', 'page-attributes' );
+
+}
+
+
+// Change loop for Front Page and Archive pages: query only for Parent=0 (no child-pages).
+// See https://stackoverflow.com/questions/5414669/wordpress-wp-query-query-parent-pages-only
+
+function designbriefs_no_parents( $query ) {
+        if ( $query->is_archive() && !is_admin() ) {
+           	$query->set( 'post_parent', 0);
+            return $query;
+            
+        } else if ( $query->is_home() && $query->is_main_query() ) {
+        
+        	$query->set( 'post_parent', 0);
+        	return $query;
+					
+        }
+}
+add_filter( 'pre_get_posts', 'designbriefs_no_parents' );
+

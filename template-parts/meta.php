@@ -18,15 +18,26 @@
 
     <?php if (  'post' == get_post_type() ) : ?>
     
-        <p><?php
+        <?php
         
-        _e( 'Keywords: ', 'designbriefs'); 
+        // Test if tags are present
         
-        the_tags( 
-        	'', // before
-        	', ', // separator
-        	'' // after
-        	); ?></p>
+        $the_tags = get_the_tag_list( 
+	        '', // before
+	        ', ', // separator
+	        '' // after )
+	      );
+	      
+	      if ( $the_tags ) {
+	      
+		      echo '<p>';
+	        _e( 'Keywords: ', 'designbriefs'); 
+	        echo $the_tags;
+	        echo '</p>';
+        
+        }
+        
+        ?>
         
     <?php endif; ?>
 

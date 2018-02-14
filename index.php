@@ -18,90 +18,65 @@
 		<?php get_header(); ?>
 		
 		<div class="container">
-			<div class="wrapper">
 				
-						<?php 
-						// Title for archive pages
-						if ( is_archive() ) {
-						    get_template_part( 'template-parts/archive-title' );
-						}
-						
-						 ?>
+			<?php 
+			
+			// Title for archive pages
+			if ( is_archive() ) {
+			
+					echo '<div class="wrapper">';
+			    get_template_part( 'template-parts/archive-title' );
+			    
+			    echo '</div><!-- .wrapper -->';
+			}
+			
+			 ?>
+			
+      <?php if ( have_posts() )  : 
 
-            <?php if ( have_posts() )  : 
+          while ( have_posts() ) : the_post(); ?>
 
-                while ( have_posts() ) : the_post(); ?>
-
-                    <div <?php post_class( 'post' ); ?>>
-
-                      <h1 class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-
-                      <?php 
-                        
-                        if ( has_post_thumbnail() ) : ?>
-                        
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="featured-image">
-                                <?php the_post_thumbnail( 'post-image' ); ?>    
-                            </a>
-                            
-                        <?php endif; 
-                        
-                        echo '<div class="meta-content">';
-                        
-                        if ( get_post_type() == 'post' ) {
-                        			
-                        		get_template_part( 'template-parts/meta' );
-                        			
-                        	}
-                        
-                        ?>
-
-                        <div class="content">
-													<h2 class="description"><?php  
-													_e( 'Description', 'designbriefs'); 
-													?></h2>
-
-                            <?php the_content(); ?>
-
-                        		</div><!-- .content -->
-												</div><!-- .meta+content -->
-
-                        <?php 
-                        
-                        if ( is_singular() ) wp_link_pages();
-
-                        if ( is_singular() ) comments_template(); ?>
-
-                    </div><!-- .post -->
-
-                    <?php 
+              <div <?php post_class( 'post' ); ?>>
+								
+								<div class="wrapper">
                 
-                endwhile;
+                <?php 
+                  
+                 	get_template_part( 'content' );
+                 
+                ?>
+								
+								</div><!-- .wrapper -->
+                  
+								<?php 
+                  if ( is_singular() ) {
+                  
+                  		// test for child-posts
+                  		
+                  		get_template_part( 'content', 'child' );
+                  	
+                  };
+                  
+                  ?>
 
-            else : ?>
+              </div><!-- .post -->
 
-                <div class="post">
+              <?php 
+          
+          endwhile;
 
-                    <p><?php _e( 'Sorry, the page you requested cannot be found.', 'davis' ); ?></p>
+      else : ?>
 
-                </div><!-- .post -->
+          <div class="post">
 
-            <?php endif;
-            
-            if ( ( ! is_singular() ) && ( $wp_query->post_count >= get_option( 'posts_per_page' ) ) ) : ?>
-	        
-		        <div class="pagination">
-			        
-					<?php previous_posts_link( '&larr; ' . __( 'Newer posts', 'davis' ) ); ?>
-					<?php next_posts_link( __( 'Older posts', 'davis') . ' &rarr;' ); ?>
-					
-		        </div><!-- .pagination -->
-	        
-	        <?php endif; ?>
-	        
+              <p><?php _e( 'Sorry, the page you requested cannot be found.', 'davis' ); ?></p>
 
-	    	</div><!-- .wrapper -->
-	    </div><!-- .container -->
+          </div><!-- .post -->
+
+      <?php endif; ?>
+
+			
+    </div><!-- .container -->
 			
 		<?php get_footer(); ?>
 	    	    
