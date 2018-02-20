@@ -35,7 +35,7 @@ $args = array(
 	
 	            <h2><?php the_title(); ?></h2>
 	
-	            <p><?php the_content(); ?></p>
+	            <div class="content"><?php the_content(); ?></div>
 	
 	        </article>
 	

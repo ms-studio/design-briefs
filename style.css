@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/ms-studio/design-briefs
 Author: Manuel Schmalstieg
 Author URI: 
 Template: davis
-Description: Theme pour le site Design Briefs, basé sur Davis.
+Description: Theme for the Design Briefs website.
 Version: 0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -121,6 +121,14 @@ header {
 .wrapper {
 	padding-top: 2em;
 	padding-bottom: 2em;
+}
+
+.post .wrapper {
+	/*padding-top: 0;*/
+}
+
+.title-wrapper {
+	padding-bottom: 0;
 }
 
 
@@ -239,7 +247,7 @@ header {
 
 .home .post,
 .archive .post {
-	margin-bottom: 3em;
+	/* margin-bottom: 3em; */
 }
 
 .child-posts-header {

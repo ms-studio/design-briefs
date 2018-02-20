@@ -33,7 +33,7 @@ if ( has_post_thumbnail() ) { ?>
 <?php }
 
 
-echo '<div class="meta-content">';
+echo '<div class="meta-content">'; // Meta + Content.
                         
 if ( get_post_type() == 'post' ) {
 			
@@ -43,11 +43,17 @@ if ( get_post_type() == 'post' ) {
 ?>
 
 <div class="content">
-	<h2 class="description"><?php  
-	_e( 'Description', 'designbriefs'); 
-	?></h2>
-
-    <?php the_content(); ?>
+		<?php 
+		
+		if ( get_post_type() == 'post' ) {
+		
+			echo '<h2 class="description">';
+			_e( 'Description', 'designbriefs'); 
+			echo '</h2>';
+		
+		}
+		
+			the_content(); ?>
 
 		</div><!-- .content -->
 </div><!-- .meta+content -->

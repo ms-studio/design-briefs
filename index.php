@@ -24,7 +24,7 @@
 			// Title for archive pages
 			if ( is_archive() ) {
 			
-					echo '<div class="wrapper">';
+					echo '<div class="wrapper title-wrapper">';
 			    get_template_part( 'template-parts/archive-title' );
 			    
 			    echo '</div><!-- .wrapper -->';
@@ -67,7 +67,7 @@
 
       else : ?>
 
-          <div class="post">
+          <div class="wrapper">
 
               <p><?php _e( 'Sorry, the page you requested cannot be found.', 'davis' ); ?></p>
 

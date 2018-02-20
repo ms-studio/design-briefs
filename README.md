@@ -1,6 +1,6 @@
 # Design Briefs
 
-WordPress theme for a website that gathers briefs and exercises for design students. The objective is to help teachers come up with new ideas, evaluate what assignments work best and what can be improved, and provide a repository of ideas.
+WordPress theme for a website that gathers briefs and exercises for design students. The objective is to help teachers come up with new ideas, evaluate what assignments work best and what can be improved, and provide a repository of ready-to-use-concepts
 
 ![](screenshot.jpg)
 
