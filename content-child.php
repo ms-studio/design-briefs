@@ -33,7 +33,16 @@ $args = array(
 	
 	        <article id="parent-<?php the_ID(); ?>" class="child-post">
 	
-	            <h2><?php the_title(); ?></h2>
+	<h2><?php the_title(); ?> <?php 
+	
+	// if user is admin
+	if ( current_user_can( 'publish_posts' ) ) {
+
+		edit_post_link('🖋️', '', '');
+		
+	}
+	
+	 ?></h2>
 	
 	            <div class="content"><?php the_content(); ?></div>
 	
