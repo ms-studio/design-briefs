@@ -11,19 +11,6 @@
 get_header(); ?>
 		
 		<div class="container">
-				
-			<?php 
-			
-			// Title for archive pages
-			if ( is_archive() ) {
-			
-					echo '<div class="wrapper title-wrapper">';
-			    get_template_part( 'template-parts/archive-title' );
-			    
-			    echo '</div><!-- .wrapper -->';
-			}
-			
-			 ?>
 			
       <?php if ( have_posts() )  : 
 
@@ -32,14 +19,19 @@ get_header(); ?>
               <div <?php post_class( 'post' ); ?>>
 								
 								<div class="wrapper">
+									
+									
                 
                 <?php 
                   
                  	get_template_part( 'content' );
                  
                 ?>
-									<div class="post-tags meta-content">
-											<p class="content">
+								
+								<div class="post-tags meta-content">
+									<div class="content">
+									
+										<br/>
 								<?php 
 								
 								// Produce a list of all existing Tags
@@ -71,8 +63,8 @@ get_header(); ?>
 								echo $html;
 								  
 								  ?>
-										</p>
-									</div>
+										</div>
+									</div><!-- .meta-content -->
 								</div><!-- .wrapper -->
                   
               </div><!-- .post -->
