@@ -9,19 +9,28 @@ $args = array(
 	    'posts_per_page' => -1,
 	    'post_parent'    => $post->ID,
 	    'order'          => 'ASC',
-	    'orderby'        => 'menu_order'
+	    'orderby'        => 'date'
 	 );
 	
 	$children = new WP_Query( $args );
 	
+	$children_count = $children->post_count;
+		
 	if ( $children->have_posts() ) : ?>
+	
+	<?php 
+	
+	// Define counter:
+	$post_count = 1;
+	
+	 ?>
 		
 	<section class="child-posts">
 		<header class="child-posts-header">
 			<h1 class="wrapper"><?php
 			
-			_e( 'reports for  ', 'designbriefs');
-			
+			echo sprintf( _n( '%s report for ', '%s reports for ', $children_count, 'designbriefs' ), $children_count );
+						
 			the_title(); 
 			 
 			?></h1>
@@ -33,16 +42,21 @@ $args = array(
 	
 	        <article id="parent-<?php the_ID(); ?>" class="child-post">
 	
-	<h2><?php the_title(); ?> <?php 
-	
-	// if user is admin
-	if ( current_user_can( 'publish_posts' ) ) {
-
-		edit_post_link('🖋️', '', '');
-		
-	}
-	
-	 ?></h2>
+						<h2><?php 
+						
+						echo '#'.$post_count.' &ndash; ';
+						
+						$post_count++;
+						
+						the_title(); 
+						
+						// if user is admin
+						if ( current_user_can( 'publish_posts' ) ) {
+							echo '&nbsp;';
+							edit_post_link('🖋️');
+						}
+						
+						 ?></h2>
 	
 	            <div class="content"><?php the_content(); ?></div>
 	
