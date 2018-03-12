@@ -48,7 +48,10 @@ h1 {
 	font-weight: 700;
 }
 
-
+.post p {
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
+}
 
 /* @end */
 
@@ -150,12 +153,15 @@ header {
 
 .child-post {
 	margin-bottom: 2em;
+	border-left-width: 2em;
 }
 
 @media (min-width: 621px) {
-	.meta-content,
-	.child-post { 
+	.meta-content { 
 		border-left-width: 2em;
+	}
+	.child-post { 
+		border-left-width: 4em;
 	}
 }
 
