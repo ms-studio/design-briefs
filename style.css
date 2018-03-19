@@ -43,6 +43,19 @@ body * {
     font-family: 'glacial-indifference-webfont', Futura, sans-serif;  
 }
 
+.frm_style_formidable-style.with_frm_style label.frm_primary_label, 
+.frm_style_formidable-style.with_frm_style.frm_login_form label,
+.frm_style_formidable-style.with_frm_style .frm_submit button {
+	font-style: normal;
+	font-weight: normal;
+	font-family: 'glacial-indifference-webfont', Futura, sans-serif;
+	font-size: 1em;
+}
+
+.frm_style_formidable-style.with_frm_style .frm_submit button {
+	font-size: 1.2em;
+}
+
 h1 {
 	font-size: 1.5em;
 	font-weight: 700;
