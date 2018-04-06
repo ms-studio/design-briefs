@@ -122,10 +122,7 @@ header {
 	margin-bottom: 1em;
 }
 
-.site-footer {
-	margin-bottom: 0;
-	padding-bottom: 2em;
-}
+
 
 .site-name {
 	font-size: 1.5em;
@@ -147,6 +144,22 @@ header {
 	padding-bottom: 0;
 }
 
+/* @group Footer */
+
+.site-footer {
+	margin-bottom: 0;
+	padding-bottom: 2em;
+}
+
+footer p + p {
+    font-style: normal;
+}
+
+footer p a {
+    text-decoration: underline;
+}
+
+/* @end */
 
 /* @end */
 

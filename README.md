@@ -45,7 +45,3 @@ $args = array(
     'post_parent'    => $post->ID,
  );
  ```
-
-
-
-***
