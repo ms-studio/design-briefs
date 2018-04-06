@@ -38,7 +38,11 @@
                   		
                   		get_template_part( 'content', 'child' );
                   	
-                  };
+                  } else {
+                  
+                  		get_template_part( 'content', 'child' );
+                  		
+                  }
                   
                   ?>
 
