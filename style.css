@@ -277,6 +277,11 @@ footer p a {
 /* @end Content */
 
 
+.post-tags a {
+	font-size: 1.6em;
+	line-height: 1.6;
+}
+
 .home .post,
 .archive .post {
 	/* margin-bottom: 3em; */
