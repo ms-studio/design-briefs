@@ -10,7 +10,15 @@ if ( is_singular() ) {
 
 	?>
 	
-	<h1 class="title"><?php the_title(); ?></h1>
+	<h1 class="title"><?php the_title(); 
+	
+	// if user is admin
+	if ( current_user_can( 'publish_posts' ) ) {
+		echo '&nbsp;';
+		edit_post_link('🖋️');
+	}
+	
+	?></h1>
 	
 	<?php
 
@@ -18,7 +26,15 @@ if ( is_singular() ) {
 
 	?>
 	
-	<h1 class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+	<h1 class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a><?php 
+	
+	// if user is admin
+	if ( current_user_can( 'publish_posts' ) ) {
+		echo '&nbsp;';
+		edit_post_link('🖋️');
+	}
+	
+	 ?></h1>
 	
 	<?php
 
