@@ -316,6 +316,15 @@ footer:before {
 	margin-top: 2em;
 }
 
+/* @end */
+
+/* @group Featherlight */
+
+.featherlight .featherlight-content .caption  {
+	padding-top: 0.5em;
+}
+
+/* @end */
 
 /* @group Formidable */
 
