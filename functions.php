@@ -100,3 +100,29 @@ function designbriefs_no_parents( $query ) {
 }
 add_filter( 'pre_get_posts', 'designbriefs_no_parents' );
 
+
+/*
+ * Formidable: Populate Field with Posts
+ *
+*/
+
+add_filter('frm_setup_new_fields_vars', 'frm_populate_posts', 20, 2);
+add_filter('frm_setup_edit_fields_vars', 'frm_populate_posts', 20, 2); //use this function on edit too
+function frm_populate_posts($values, $field){
+  if($field->id == 86){ //replace 125 with the ID of the field to populate
+    $posts = get_posts( array(
+    	'post_type' => 'post', 
+    	'post_status' => array('publish', 'private'),
+    	'post_parent' => 0,
+    	'numberposts' => 999, 
+    	'orderby' => 'title', 
+    	'order' => 'ASC'));
+    unset($values['options']);
+    $values['options'] = array(''); //remove this line if you are using a checkbox or radio button field
+    foreach($posts as $p){
+      $values['options'][$p->ID] = $p->post_title;
+    }
+    $values['use_key'] = true; //this will set the field to save the post ID instead of post title
+  }
+  return $values;
+}
