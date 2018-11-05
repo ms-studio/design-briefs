@@ -20,11 +20,13 @@ Not sure yet! At the moment, they are not displayed. We could use them to create
 
 ### How are Tags used ?
 
-Tags are used to define keywords. They can associate a brief to a more specific field of practice (type design, calligraphy, 3d printing...), a topic (time, emotions, climate...), a tool (css, javascript, arduino...), a medium (screen, video, paper).
+Tags are used to define [keywords](https://designbriefs.ch/keywords/). They can associate a brief to a more specific field of practice (type design, calligraphy, 3d printing...), a topic (time, emotions, climate...), a tool (css, javascript, arduino...), a medium (screen, video, paper).
+
+The Keywords template (page-templates > keywords.php) displays all the Tags being used.
 
 ## Design
 
-This theme includes a custom typeface: *Glacial Indifference*, by Alfredo Marco Pradil, released under the SIL Open Font License. The OTF font has been converted into webfont formats using FontSquirrel.
+This theme includes a custom typeface: *[Glacial Indifference](https://fontlibrary.org/en/font/glacial-indifference)*, by Alfredo Marco Pradil, released under the SIL Open Font License. The OTF font has been converted into webfont formats using [FontSquirrel](https://www.fontsquirrel.com/).
 
 ## Todo
 
