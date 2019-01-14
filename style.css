@@ -80,6 +80,7 @@ html, body {
 
 .site-header,
 .site-header a,
+.site-header button,
 .site-footer,
 .site-footer a {
 	color: #fff;
@@ -108,7 +109,6 @@ header {
 
 .site-header,
 .site-footer {
-	
 	margin-left: 0;
 	margin-right: 0;
 	width: 100%;
@@ -123,8 +123,7 @@ header {
 }
 
 
-
-.site-name {
+header .site-title {
 	font-size: 1.5em;
 	font-weight: 700;
 	margin-top: 0;
@@ -220,7 +219,8 @@ footer p a {
 }
 
 @media (min-width: 621px) {
-
+	
+	header .site-title,
 	.site-name,
 	.menu,
 	footer p 
