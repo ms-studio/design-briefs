@@ -13,31 +13,7 @@ Text Domain: designbriefs
 
 */
 
-/* @group Typography */
 
-@font-face {
-    font-family: 'glacial-indifference-webfont';
-    src: url('fonts/glacial-indifference/regular.woff2') format('woff2'),
-         url('fonts/glacial-indifference/regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'glacial-indifference-webfont';
-    src: url('fonts/glacial-indifference/bold.woff2') format('woff2'),
-         url('fonts/glacial-indifference/bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'glacial-indifference-webfont';
-    src: url('fonts/glacial-indifference/italic.woff2') format('woff2'),
-         url('fonts/glacial-indifference/italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
 
 body * {
     font-family: 'glacial-indifference-webfont', Futura, sans-serif;  
